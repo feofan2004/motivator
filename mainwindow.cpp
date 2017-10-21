@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #include "mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
@@ -98,7 +98,6 @@ MainWindow::~MainWindow()
 {
 
 }
-=======
 #include "mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
@@ -198,4 +197,3 @@ MainWindow::~MainWindow()
 {
 
 }
->>>>>>> 1cc405a32d2e037764fbcd83d36353b2e055d184

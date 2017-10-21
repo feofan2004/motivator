@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #ifndef PLAYER_H
 #define PLAYER_H
 
@@ -29,7 +29,7 @@ public:
 };
 
 #endif // PLAYER_H
-=======
+
 #ifndef PLAYER_H
 #define PLAYER_H
 
@@ -60,4 +60,4 @@ public:
 };
 
 #endif // PLAYER_H
->>>>>>> 1cc405a32d2e037764fbcd83d36353b2e055d184
+

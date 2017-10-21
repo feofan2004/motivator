@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #include "player.h"
 
 Player::Player(QWidget *parent)
@@ -37,7 +37,7 @@ Player::~Player()
 {
 
 }
-=======
+
 #include "player.h"
 
 Player::Player(QWidget *parent)
@@ -76,4 +76,3 @@ Player::~Player()
 {
 
 }
->>>>>>> 1cc405a32d2e037764fbcd83d36353b2e055d184
