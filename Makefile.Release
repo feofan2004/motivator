@@ -110,9 +110,9 @@ compiler_rcc_make_all: release/qrc_data.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_data.cpp
 release/qrc_data.cpp: data.qrc \
-		icons/pause.png \
 		icons/next.png \
 		icons/prev.png \
+		icons/pause.png \
 		icons/play.png \
 		images/1.jpg
 	C:\Qt\5.2.1\mingw48_32\bin\rcc.exe -name data data.qrc -o release\qrc_data.cpp
