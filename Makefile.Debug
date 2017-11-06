@@ -111,10 +111,10 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_data.cpp
 debug/qrc_data.cpp: data.qrc \
 		images/1.jpg \
-		icons/play.png \
-		icons/next.png \
+		icons/prev.png \
 		icons/pause.png \
-		icons/prev.png
+		icons/play.png \
+		icons/next.png
 	C:\Qt\5.2.1\mingw48_32\bin\rcc.exe -name data data.qrc -o debug\qrc_data.cpp
 
 compiler_moc_header_make_all: debug/moc_mainwindow.cpp debug/moc_player.cpp
