@@ -113,8 +113,8 @@ debug/qrc_data.cpp: data.qrc \
 		images/1.jpg \
 		icons/prev.png \
 		icons/play.png \
-		icons/pause.png \
-		icons/next.png
+		icons/next.png \
+		icons/pause.png
 	C:\Qt\5.2.1\mingw48_32\bin\rcc.exe -name data data.qrc -o debug\qrc_data.cpp
 
 compiler_moc_header_make_all: debug/moc_mainwindow.cpp debug/moc_player.cpp

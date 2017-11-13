@@ -8,9 +8,7 @@ Start "" "release\player_lab.exe"
 set /P v= < version.txt
 set /a v+=1
 copy nul version.txt
-
-%v% >>version.txt
-pause
+ECHO %v% >>version.txt
 compil32 /cc ins.iss
 git add .
 git commit -m "New  %v%"

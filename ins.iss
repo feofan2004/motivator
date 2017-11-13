@@ -4,14 +4,14 @@
 #define MyAppName "My Program"
 #define MyAppVersion "1.5"
 #define MyAppPublisher "My Company, Inc."
-#define MyAppURL "https://github.com/feofan2004/motivator.git"
+#define MyAppURL "http://www.example.com/"
 #define MyAppExeName "player_lab.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{740C4D79-B113-4B11-9D39-A624FC594883}
+AppId={{AAD9F44B-59DB-4A19-9165-951BE663A608}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -20,8 +20,9 @@ AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
-DisableProgramGroupPage=yes
-OutputDir=C:\pppo
+DefaultGroupName={#MyAppName}
+AllowNoIcons=yes
+OutputDir=C:\Users\vlad2_000\Downloads\PPPO\release
 OutputBaseFilename=setup
 Compression=lzma
 SolidCompression=yes
@@ -31,18 +32,22 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
+Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
 Source: "C:\Users\vlad2_000\Downloads\PPPO\release\player_lab.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\vlad2_000\Downloads\PPPO\release\icudt51.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\vlad2_000\Downloads\PPPO\release\icuin51.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\vlad2_000\Downloads\PPPO\release\icuuc51.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\vlad2_000\Downloads\PPPO\release\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\vlad2_000\Downloads\PPPO\release\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\vlad2_000\Downloads\PPPO\release\main.o"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\vlad2_000\Downloads\PPPO\release\mainwindow.o"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\vlad2_000\Downloads\PPPO\release\moc_mainwindow.cpp"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\vlad2_000\Downloads\PPPO\release\moc_mainwindow.o"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\vlad2_000\Downloads\PPPO\release\moc_player.cpp"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\vlad2_000\Downloads\PPPO\release\moc_player.o"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\vlad2_000\Downloads\PPPO\release\msvcrt.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\vlad2_000\Downloads\PPPO\release\player.o"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\vlad2_000\Downloads\PPPO\release\qrc_data.cpp"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\vlad2_000\Downloads\PPPO\release\qrc_data.o"; DestDir: "{app}"; Flags: ignoreversion
@@ -69,8 +74,9 @@ Source: "C:\Users\vlad2_000\Downloads\PPPO\release\playlistformats\*"; DestDir: 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{commonprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
+Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
+Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: quicklaunchicon
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
