@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\player.o
+./release\mylabel.o
+./release\mywidget.o
+./release\qrc_data.o
+./release\moc_mainwindow.o
+./release\moc_player.o
+./release\moc_mylabel.o
+./release\moc_mywidget.o
+);

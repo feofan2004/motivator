@@ -1,4 +1,3 @@
-
 #include "mainwindow.h"
 #include <QApplication>
 
@@ -8,5 +7,3 @@ int main(int argc, char* argv[])
     MainWindow w;
     return a.exec();
 }
-
-

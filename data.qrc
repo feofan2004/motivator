@@ -4,6 +4,10 @@
         <file>icons/pause.png</file>
         <file>icons/play.png</file>
         <file>icons/prev.png</file>
-        <file>images/1.jpg</file>
+        <file>icons/stop.png</file>
+        <file>images/default.jpg</file>
+        <file>icons/openPlaylists.png</file>
+        <file>icons/openPic.png</file>
+        <file>icons/MainWindow.png</file>
     </qresource>
 </RCC>

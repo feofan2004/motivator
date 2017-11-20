@@ -1,4 +1,3 @@
-
 QT += core gui
 QT += widgets
 QT += multimedia
@@ -6,11 +5,15 @@ QT += multimedia
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    player.cpp
+    player.cpp \
+    mylabel.cpp \
+    mywidget.cpp
 
 HEADERS += \
     mainwindow.h \
-    player.h
+    player.h \
+    mylabel.h \
+    mywidget.h
 
 RESOURCES += \
     data.qrc
