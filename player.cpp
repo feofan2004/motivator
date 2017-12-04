@@ -3,11 +3,11 @@
 
 Player::Player(MainWindow* parent)
 {
-    maximumPlaylist=0;
+    maximumPlaylist=2;
     idPlaylist=0;
     parentPtr = parent;
     control          = new QMediaPlayer();
-    playlist         = new QMediaPlaylist;
+
     allPlaylists     = new QList<QMediaPlaylist*>;
     playlistUiWindow = new QWidget;
     addSongButton          = new QPushButton(playlistUiWindow);
@@ -22,7 +22,6 @@ Player::Player(MainWindow* parent)
     buttons1         = new QHBoxLayout;
     buttons2         = new QHBoxLayout;
     songs            = new QListWidget*[10];
-    songs[0]         = new QListWidget;
     playlistsWidget  = new QTabWidget(playlistUiWindow);
 
     addSongButton->setText("Add Song");
@@ -41,23 +40,77 @@ Player::Player(MainWindow* parent)
     buttons2->addWidget(renamePlaylistButton);
     playlistsButtons->addLayout(buttons1);
     playlistsButtons->addLayout(buttons2);
-
-    playlistsWidget->addTab(songs[0],"default");
-
+    songs[0] = new QListWidget;
+    playlistsWidget->addTab(songs[0],"for all");
+    playlist         = new QMediaPlaylist;
+    allPlaylists->push_back(playlist);
+    playlistsWidget->setCurrentIndex(0);
+    QDir ff1(QCoreApplication::applicationDirPath()+"/playlists/all");
+    QStringList nameFilter;
+    nameFilter << "*.mp3"<< "*.flac";
+    QFileInfoList lt = ff1.entryInfoList( nameFilter, QDir::Files );
+    QFileInfo fo;
+    foreach (fo, lt)
+    {
+        playlist = allPlaylists->at(playlistsWidget->currentIndex());
+        playlist->addMedia(QUrl::fromLocalFile(fo.absoluteFilePath()));
+        playlist->load(QUrl::fromLocalFile(fo.absoluteFilePath()));
+        QString songName=fo.absoluteFilePath().section('/',-1);
+        songs[playlistsWidget->currentIndex()]->addItem(songName);
+    }
+    connect(songs[0], &QListWidget::doubleClicked, this, &Player::playThisSong);
+    connect(parentPtr->prevButton,&QPushButton::clicked,allPlaylists->at(0),&QMediaPlaylist::previous);
+    connect(parentPtr->nextButton,&QPushButton::clicked,allPlaylists->at(0),&QMediaPlaylist::next);
+    songs[1] = new QListWidget;
+    playlistsWidget->addTab(songs[1],"learning");
+    playlist         = new QMediaPlaylist;
+    allPlaylists->push_back(playlist);
+    playlistsWidget->setCurrentIndex(1);
+    QDir ff2(QCoreApplication::applicationDirPath()+"/playlists/ln");
+    lt = ff2.entryInfoList( nameFilter, QDir::Files );
+    foreach (fo, lt)
+    {
+        playlist = allPlaylists->at(playlistsWidget->currentIndex());
+        playlist->addMedia(QUrl::fromLocalFile(fo.absoluteFilePath()));
+        playlist->load(QUrl::fromLocalFile(fo.absoluteFilePath()));
+        QString songName=fo.absoluteFilePath().section('/',-1);
+        songs[playlistsWidget->currentIndex()]->addItem(songName);
+    }
+    connect(songs[1], &QListWidget::doubleClicked, this, &Player::playThisSong);
+    connect(parentPtr->prevButton,&QPushButton::clicked,allPlaylists->at(1),&QMediaPlaylist::previous);
+    connect(parentPtr->nextButton,&QPushButton::clicked,allPlaylists->at(1),&QMediaPlaylist::next);
+    songs[2] = new QListWidget;
+    playlistsWidget->addTab(songs[2],"test");
+    playlist         = new QMediaPlaylist;
+    allPlaylists->push_back(playlist);
+    playlistsWidget->setCurrentIndex(2);
+    QDir ff3(QCoreApplication::applicationDirPath()+"/playlists/test");
+    lt = ff3.entryInfoList( nameFilter, QDir::Files );
+    foreach (fo, lt)
+    {
+        playlist = allPlaylists->at(playlistsWidget->currentIndex());
+        playlist->addMedia(QUrl::fromLocalFile(fo.absoluteFilePath()));
+        playlist->load(QUrl::fromLocalFile(fo.absoluteFilePath()));
+        QString songName=fo.absoluteFilePath().section('/',-1);
+        songs[playlistsWidget->currentIndex()]->addItem(songName);
+    }
+    connect(songs[2], &QListWidget::doubleClicked, this, &Player::playThisSong);
+    connect(parentPtr->prevButton,&QPushButton::clicked,allPlaylists->at(2),&QMediaPlaylist::previous);
+    connect(parentPtr->nextButton,&QPushButton::clicked,allPlaylists->at(2),&QMediaPlaylist::next);
     playlistLayot->addWidget(playlistsWidget);
     playlistLayot->addLayout(playlistsButtons);
     playlistUiWindow->setLayout(playlistLayot);
     playlistUiWindow->setWindowIcon(QIcon(":/icons/MainWindow.png"));
     playlistUiWindow->setWindowTitle("Playlist Manager");
 
-    allPlaylists->push_back(playlist);
+
     connect(addPlaylistButton,  &QPushButton::clicked,          this,               &Player::addFuckingPlaylist);
     connect(addSongButton,      &QPushButton::clicked,          this,               &Player::addSong);
     connect(parentPtr->volume,  &QSlider::valueChanged,         control,            &QMediaPlayer::setVolume);
     connect(control,            &QMediaPlayer::positionChanged, this,               &Player::setCurrentSongCurrentTimeLabel);
     connect(control,            &QMediaPlayer::durationChanged, this,               &Player::setCurrentSongDurationLabel);
     connect(parentPtr->length,  &QSlider::sliderMoved,          control,            &QMediaPlayer::setPosition);
-    connect(*songs,             &QListWidget::doubleClicked,    this,               &Player::playThisSong);
+
     connect(delSongButton,      &QPushButton::clicked,          this,               &Player::deleteThisSong);
     connect(delPlaylistButton,  &QPushButton::clicked,          this,               &Player::delPlaylist);
     connect(savePlaylistButton, &QPushButton::clicked,          this,               &Player::savePlaylist);

@@ -118,15 +118,28 @@ compiler_rcc_make_all: debug/qrc_data.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_data.cpp
 debug/qrc_data.cpp: data.qrc \
-		icons/next.png \
-		icons/MainWindow.png \
-		icons/pause.png \
-		icons/openPlaylists.png \
-		icons/openPic.png \
-		icons/prev.png \
+		images/9GFIdTrOiNI.jpg \
+		images/default.jpg \
+		images/JNhRhDwFwio.jpg \
+		images/K0Lmleyz-6g.jpg \
+		images/mz9fa1S3daY.jpg \
+		images/wP3nUfvyAL4.jpg \
+		images/default.jpg \
+		images/z1wSPR2z9q0.jpg \
+		images/rMGsYhuNnkg.jpg \
+		images/HMRa5_7gDC0.jpg \
+		images/I6JClYSPbNk.jpg \
+		images/OrV60tc3swQ.jpg \
+		images/B7v1-CaZ8q0.jpg \
+		images/nF8UBhtvk0s.jpg \
 		icons/stop.png \
 		icons/play.png \
-		images/default.jpg
+		icons/openPlaylists.png \
+		icons/next.png \
+		icons/pause.png \
+		icons/MainWindow.png \
+		icons/openPic.png \
+		icons/prev.png
 	C:\Qt\5.2.1\mingw48_32\bin\rcc.exe -name data data.qrc -o debug\qrc_data.cpp
 
 compiler_moc_header_make_all: debug/moc_mainwindow.cpp debug/moc_player.cpp debug/moc_mylabel.cpp debug/moc_mywidget.cpp
@@ -276,6 +289,13 @@ debug/moc_mainwindow.cpp: ../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/QMai
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qstandardpaths.h \
 		mywidget.h \
 		player.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/QApplication \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qcoreapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qeventloop.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qdesktopwidget.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qguiapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qinputmethod.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/QMediaPlayer \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaplayer.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaobject.h \
@@ -325,12 +345,9 @@ debug/moc_mainwindow.cpp: ../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/QMai
 		mainwindow.h
 	C:\Qt\5.2.1\mingw48_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 $(INCPATH) mainwindow.h -o debug\moc_mainwindow.cpp
 
-debug/moc_player.cpp: ../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/QMediaPlayer \
-		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaplayer.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaobject.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobject.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qnamespace.h \
+debug/moc_player.cpp: ../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/QApplication \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qcoreapplication.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qglobal.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qconfig.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qfeatures.h \
@@ -367,13 +384,16 @@ debug/moc_player.cpp: ../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/QMedi
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qtypeinfo.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qtypetraits.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsysinfo.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs_impl.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qstring.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qchar.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qbytearray.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qrefcount.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qnamespace.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qarraydata.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qstringbuilder.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobject.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs_impl.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qlist.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qalgorithms.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qiterator.h \
@@ -384,33 +404,72 @@ debug/moc_player.cpp: ../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/QMedi
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qcontainerfwd.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qisenum.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobject_impl.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qeventloop.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qwindowdefs.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qwindowdefs_win.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qpoint.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsize.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qcursor.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qdesktopwidget.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qwidget.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qmargins.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qrect.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpaintdevice.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpalette.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qcolor.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qrgb.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qstringlist.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qdatastream.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qiodevice.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qpair.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qregexp.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qstringmatcher.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qbrush.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qvector.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qmatrix.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpolygon.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qregion.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qline.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qtransform.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpainterpath.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qimage.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpixmap.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qshareddata.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer_impl.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qhash.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qfont.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qfontmetrics.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qfontinfo.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qsizepolicy.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qkeysequence.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qevent.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qvariant.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qmap.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qdebug.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qtextstream.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qlocale.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qset.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qcontiguouscache.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qurl.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qurlquery.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qfile.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qfiledevice.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qvector2d.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qtouchdevice.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qguiapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qinputmethod.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/QMediaPlayer \
+		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaplayer.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaobject.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qtmultimediadefs.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmultimedia.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediacontent.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qshareddata.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaresource.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qmap.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qdebug.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qhash.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qtextstream.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qlocale.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qvariant.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qvector.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qpoint.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qset.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qcontiguouscache.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtNetwork/qnetworkrequest.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/QSharedDataPointer \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/QString \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/QUrl \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qurl.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qurlquery.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/QVariant \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaenumdebug.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qmetaobject.h \
@@ -422,39 +481,7 @@ debug/moc_player.cpp: ../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/QMedi
 		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qfiledialog.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qdir.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qfileinfo.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qfile.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qfiledevice.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qdialog.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qwidget.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qwindowdefs.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qwindowdefs_win.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qmargins.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qrect.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsize.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpaintdevice.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpalette.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qcolor.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qrgb.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qbrush.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qmatrix.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpolygon.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qregion.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qline.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qtransform.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpainterpath.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qimage.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpixmap.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer_impl.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qfont.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qfontmetrics.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qfontinfo.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qsizepolicy.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qcursor.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qkeysequence.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qevent.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qvector2d.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qtouchdevice.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/QTabWidget \
 		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qtabwidget.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qicon.h \
@@ -878,6 +905,13 @@ debug/main.o: main.cpp mainwindow.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qstandardpaths.h \
 		mywidget.h \
 		player.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/QApplication \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qcoreapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qeventloop.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qdesktopwidget.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qguiapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qinputmethod.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/QMediaPlayer \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaplayer.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaobject.h \
@@ -923,14 +957,7 @@ debug/main.o: main.cpp mainwindow.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/QDir \
 		mylabel.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtGui/QMouseEvent \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/QResizeEvent \
-		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/QApplication \
-		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qapplication.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qcoreapplication.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qeventloop.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qdesktopwidget.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qguiapplication.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qinputmethod.h
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/QResizeEvent
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o main.cpp
 
 debug/mainwindow.o: mainwindow.cpp mainwindow.h \
@@ -1078,6 +1105,13 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qstandardpaths.h \
 		mywidget.h \
 		player.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/QApplication \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qcoreapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qeventloop.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qdesktopwidget.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qguiapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qinputmethod.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/QMediaPlayer \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaplayer.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaobject.h \
@@ -1127,12 +1161,9 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o mainwindow.cpp
 
 debug/player.o: player.cpp player.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/QMediaPlayer \
-		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaplayer.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaobject.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobject.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qnamespace.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/QApplication \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qcoreapplication.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qglobal.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qconfig.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qfeatures.h \
@@ -1169,13 +1200,16 @@ debug/player.o: player.cpp player.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qtypeinfo.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qtypetraits.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsysinfo.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs_impl.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qstring.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qchar.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qbytearray.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qrefcount.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qnamespace.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qarraydata.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qstringbuilder.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobject.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobjectdefs_impl.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qlist.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qalgorithms.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qiterator.h \
@@ -1186,33 +1220,72 @@ debug/player.o: player.cpp player.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qcontainerfwd.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qisenum.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qobject_impl.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qeventloop.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qwindowdefs.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qwindowdefs_win.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qpoint.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsize.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qcursor.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qdesktopwidget.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qwidget.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qmargins.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qrect.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpaintdevice.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpalette.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qcolor.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qrgb.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qstringlist.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qdatastream.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qiodevice.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qpair.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qregexp.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qstringmatcher.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qbrush.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qvector.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qmatrix.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpolygon.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qregion.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qline.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qtransform.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpainterpath.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qimage.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpixmap.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qshareddata.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer_impl.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qhash.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qfont.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qfontmetrics.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qfontinfo.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qsizepolicy.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qkeysequence.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qevent.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qvariant.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qmap.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qdebug.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qtextstream.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qlocale.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qset.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qcontiguouscache.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qurl.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qurlquery.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qfile.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qfiledevice.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qvector2d.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qtouchdevice.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qguiapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qinputmethod.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/QMediaPlayer \
+		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaplayer.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaobject.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qtmultimediadefs.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmultimedia.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediacontent.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qshareddata.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaresource.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qmap.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qdebug.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qhash.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qtextstream.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qlocale.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qvariant.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qvector.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qpoint.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qset.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qcontiguouscache.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtNetwork/qnetworkrequest.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/QSharedDataPointer \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/QString \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/QUrl \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qurl.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qurlquery.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/QVariant \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaenumdebug.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qmetaobject.h \
@@ -1224,39 +1297,7 @@ debug/player.o: player.cpp player.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qfiledialog.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qdir.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qfileinfo.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qfile.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qfiledevice.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qdialog.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qwidget.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qwindowdefs.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qwindowdefs_win.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qmargins.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qrect.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsize.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpaintdevice.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpalette.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qcolor.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qrgb.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qbrush.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qmatrix.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpolygon.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qregion.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qline.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qtransform.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpainterpath.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qimage.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qpixmap.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qsharedpointer_impl.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qfont.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qfontmetrics.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qfontinfo.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qsizepolicy.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qcursor.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qkeysequence.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qevent.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qvector2d.h \
-		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qtouchdevice.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/QTabWidget \
 		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qtabwidget.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qicon.h \
@@ -1580,6 +1621,13 @@ debug/mywidget.o: mywidget.cpp mywidget.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/QStandardPaths \
 		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qstandardpaths.h \
 		player.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/QApplication \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qcoreapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtCore/qeventloop.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtWidgets/qdesktopwidget.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qguiapplication.h \
+		../../../../Qt/5.2.1/mingw48_32/include/QtGui/qinputmethod.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/QMediaPlayer \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaplayer.h \
 		../../../../Qt/5.2.1/mingw48_32/include/QtMultimedia/qmediaobject.h \

@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     animationTimer = new QTimer;
     slideShowTimer = new QTimer;
     background = new QImage(":/images/default.jpg");
+
     allPics = new QQueue<QString>;
     currentPicIndex = 0;
     mainLayout = new QVBoxLayout;
@@ -108,6 +109,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     connect(pauseButton,&QPushButton::clicked, this, &MainWindow::pauseSlideShow);
     connect(playButton, &QPushButton::clicked, this, &MainWindow::startSlideShow);
     connect(slideShowTimer, &QTimer::timeout, this, &MainWindow::nextPic);
+    QDir ff(":/images/images");
+        QStringList nameFilter;
+
+        nameFilter << "*.jpg";
+        QFileInfoList lt = ff.entryInfoList( nameFilter, QDir::Files );
+
+        QFileInfo fo;
+        foreach (fo, lt)
+        {
+            qDebug()<<"!";
+            allPics->push_back(fo.absoluteFilePath());
+        }
 }
 
 void MainWindow::openPic()

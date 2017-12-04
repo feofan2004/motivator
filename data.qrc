@@ -10,4 +10,19 @@
         <file>icons/openPic.png</file>
         <file>icons/MainWindow.png</file>
     </qresource>
+    <qresource prefix="/images">
+        <file alias="/music">images/9GFIdTrOiNI.jpg</file>
+        <file>images/B7v1-CaZ8q0.jpg</file>
+        <file>images/default.jpg</file>
+        <file>images/HMRa5_7gDC0.jpg</file>
+        <file>images/I6JClYSPbNk.jpg</file>
+        <file>images/JNhRhDwFwio.jpg</file>
+        <file>images/K0Lmleyz-6g.jpg</file>
+        <file>images/mz9fa1S3daY.jpg</file>
+        <file>images/nF8UBhtvk0s.jpg</file>
+        <file>images/OrV60tc3swQ.jpg</file>
+        <file>images/rMGsYhuNnkg.jpg</file>
+        <file>images/wP3nUfvyAL4.jpg</file>
+        <file>images/z1wSPR2z9q0.jpg</file>
+    </qresource>
 </RCC>
