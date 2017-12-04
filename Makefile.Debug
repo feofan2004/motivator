@@ -118,28 +118,28 @@ compiler_rcc_make_all: debug/qrc_data.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_data.cpp
 debug/qrc_data.cpp: data.qrc \
+		icons/prev.png \
+		icons/openPic.png \
+		icons/stop.png \
+		icons/play.png \
+		icons/openPlaylists.png \
+		icons/MainWindow.png \
+		icons/next.png \
+		icons/pause.png \
 		images/9GFIdTrOiNI.jpg \
 		images/default.jpg \
+		images/OrV60tc3swQ.jpg \
+		images/B7v1-CaZ8q0.jpg \
+		images/nF8UBhtvk0s.jpg \
 		images/JNhRhDwFwio.jpg \
 		images/K0Lmleyz-6g.jpg \
 		images/mz9fa1S3daY.jpg \
 		images/wP3nUfvyAL4.jpg \
-		images/default.jpg \
 		images/z1wSPR2z9q0.jpg \
+		images/default.jpg \
 		images/rMGsYhuNnkg.jpg \
 		images/HMRa5_7gDC0.jpg \
-		images/I6JClYSPbNk.jpg \
-		images/OrV60tc3swQ.jpg \
-		images/B7v1-CaZ8q0.jpg \
-		images/nF8UBhtvk0s.jpg \
-		icons/stop.png \
-		icons/play.png \
-		icons/openPlaylists.png \
-		icons/next.png \
-		icons/pause.png \
-		icons/MainWindow.png \
-		icons/openPic.png \
-		icons/prev.png
+		images/I6JClYSPbNk.jpg
 	C:\Qt\5.2.1\mingw48_32\bin\rcc.exe -name data data.qrc -o debug\qrc_data.cpp
 
 compiler_moc_header_make_all: debug/moc_mainwindow.cpp debug/moc_player.cpp debug/moc_mylabel.cpp debug/moc_mywidget.cpp
