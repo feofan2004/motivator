@@ -45,7 +45,7 @@ Player::Player(MainWindow* parent)
     playlist         = new QMediaPlaylist;
     allPlaylists->push_back(playlist);
     playlistsWidget->setCurrentIndex(0);
-    QDir ff1(QCoreApplication::applicationDirPath()+"/playlists/all");
+    QDir ff1(QCoreApplication::applicationDirPath()+"/all");
     QStringList nameFilter;
     nameFilter << "*.mp3"<< "*.flac";
     QFileInfoList lt = ff1.entryInfoList( nameFilter, QDir::Files );
@@ -66,7 +66,7 @@ Player::Player(MainWindow* parent)
     playlist         = new QMediaPlaylist;
     allPlaylists->push_back(playlist);
     playlistsWidget->setCurrentIndex(1);
-    QDir ff2(QCoreApplication::applicationDirPath()+"/playlists/ln");
+    QDir ff2(QCoreApplication::applicationDirPath()+"/ln");
     lt = ff2.entryInfoList( nameFilter, QDir::Files );
     foreach (fo, lt)
     {
@@ -84,7 +84,7 @@ Player::Player(MainWindow* parent)
     playlist         = new QMediaPlaylist;
     allPlaylists->push_back(playlist);
     playlistsWidget->setCurrentIndex(2);
-    QDir ff3(QCoreApplication::applicationDirPath()+"/playlists/test");
+    QDir ff3(QCoreApplication::applicationDirPath()+"/test");
     lt = ff3.entryInfoList( nameFilter, QDir::Files );
     foreach (fo, lt)
     {
@@ -169,6 +169,7 @@ void Player::savePlaylist()
 }
 void Player::loadPlaylist()
 {
+
     QString fileName = QFileDialog::getOpenFileName(parentPtr,"Browse","C://","List File (*.qtppl)");
     QFile playlistOut(fileName);
 
@@ -179,7 +180,7 @@ void Player::loadPlaylist()
     else
     {
         QTextStream outStream(&playlistOut);
-
+        qDebug()<<"1111"<<maximumPlaylist;
         if(!outStream.atEnd())
         {
         maximumPlaylist+=1;
@@ -230,13 +231,14 @@ void Player::loadPlaylist()
 void Player::delPlaylist()
 {
     qDebug() << maximumPlaylist << "!" << idPlaylist;
-    if(playlistsWidget->currentIndex() != 0)
+    if(playlistsWidget->currentIndex() != -1)
     {
         allPlaylists->removeAt(playlistsWidget->currentIndex());
         playlistsWidget->removeTab(playlistsWidget->currentIndex());
         maximumPlaylist-=1;
 
     }
+
 }
 
 void Player::deleteThisSong()
@@ -273,10 +275,7 @@ void Player::setCurrentSongDurationLabel(qint64 a)
 void Player::setCurrentSongCurrentTimeLabel(qint64 a)
 {
     parentPtr->length->setValue(a);
-//    if(a==control->duration())
-//    {
-//        nextSongInPlaylistManager();
-//    }
+
     qint64 seconds = (control->position() / 1000)    % 60;
     qint64 minutes = (control->position() / 60000)   % 60;
     qint64 hours   = (control->position() / 3600000) % 24;
@@ -300,6 +299,7 @@ void Player::setCurrentSongCurrentTimeLabel(qint64 a)
 
 void Player::addSong()
 {
+
     QStringList filename = QFileDialog::getOpenFileNames(parentPtr,"Browse","C://","Music File (*.mp3)");
     foreach(QString i, filename)
     {
@@ -310,6 +310,8 @@ void Player::addSong()
         songs[playlistsWidget->currentIndex()]->addItem(songName);
     }
     control->setPlaylist(playlist);
+    playlistUiWindow->raise();
+    playlistUiWindow->activateWindow();
 }
 
 void Player::addFuckingPlaylist()
@@ -318,6 +320,7 @@ void Player::addFuckingPlaylist()
     idPlaylist+=1;
     if(maximumPlaylist<10)
     {
+
         QString tmp="playlist ";
         tmp+= QString::number(idPlaylist);
         allPlaylists->push_back(new QMediaPlaylist);
@@ -333,6 +336,8 @@ void Player::addFuckingPlaylist()
     {
         maximumPlaylist-=1;
     }
+    playlistUiWindow->raise();
+    playlistUiWindow->activateWindow();
 }
 
 void Player::openPlaylistsWidget()

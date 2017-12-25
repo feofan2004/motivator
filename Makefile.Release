@@ -120,9 +120,6 @@ compiler_rcc_clean:
 release/qrc_data.cpp: data.qrc \
 		images/9GFIdTrOiNI.jpg \
 		images/default.jpg \
-		images/HMRa5_7gDC0.jpg \
-		images/I6JClYSPbNk.jpg \
-		images/OrV60tc3swQ.jpg \
 		images/B7v1-CaZ8q0.jpg \
 		images/nF8UBhtvk0s.jpg \
 		images/JNhRhDwFwio.jpg \
@@ -132,14 +129,17 @@ release/qrc_data.cpp: data.qrc \
 		images/z1wSPR2z9q0.jpg \
 		images/default.jpg \
 		images/rMGsYhuNnkg.jpg \
-		icons/pause.png \
+		images/I6JClYSPbNk.jpg \
+		images/HMRa5_7gDC0.jpg \
+		images/OrV60tc3swQ.jpg \
+		icons/openPic.png \
+		icons/next.png \
+		icons/MainWindow.png \
+		icons/openPlaylists.png \
 		icons/prev.png \
 		icons/stop.png \
-		icons/openPic.png \
-		icons/play.png \
-		icons/openPlaylists.png \
-		icons/MainWindow.png \
-		icons/next.png
+		icons/pause.png \
+		icons/play.png
 	C:\Qt\5.2.1\mingw48_32\bin\rcc.exe -name data data.qrc -o release\qrc_data.cpp
 
 compiler_moc_header_make_all: release/moc_mainwindow.cpp release/moc_player.cpp release/moc_mylabel.cpp release/moc_mywidget.cpp
